@@ -8,14 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.WebServiceRef;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "WebClient", urlPatterns = {"/WebClient"})
 public class WebClient extends HttpServlet {
 
-//    @WebServiceRef(wsdlLocation = "http://localhost:1531/service/helloWebService?wsdl")
     private mypackage.HelloWebService service = new HelloWebServiceService().getHelloWebServicePort();
 
     protected void processRequest(HttpServletRequest request,
@@ -25,16 +23,18 @@ public class WebClient extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        out.println("<html lang=\"en\">");
-        out.println("<head>");
-        out.println("<title>Servlet HelloServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet HelloServlet at " +
-                request.getContextPath() + "</h1>");
-        out.println("<p>" + sayHello("Max") + "</p>");
-        out.println("</body>");
-        out.println("</html>");
+       response.sendRedirect("OrderPage.jsp");
+
+//        out.println("<html lang=\"en\">");
+//        out.println("<head>");
+//        out.println("<title>Servlet HelloServlet</title>");
+//        out.println("</head>");
+//        out.println("<body>");
+//        out.println("<h1>Servlet HelloServlet at " +
+//                request.getContextPath() + "</h1>");
+//        out.println("<p>" + sayHello("Max") + "</p>");
+//        out.println("</body>");
+//        out.println("</html>");
     }
 
     @Override
