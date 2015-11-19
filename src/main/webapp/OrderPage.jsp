@@ -13,7 +13,13 @@
 <body>
 <h1>This is order page!</h1>
 
-<form method="post" action="OrderPage.jsp">
+<form method="POST" action="OrderPage.jsp">
+  <h2>Please input folder name with images</h2>
+
+  Folder name: <input type="text" size="20" name="Folder_name">
+
+  <INPUT TYPE=submit value="Check folder">
+</form>
 
 
 </form>
