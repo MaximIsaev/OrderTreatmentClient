@@ -14,14 +14,22 @@ import java.io.PrintWriter;
 @WebServlet(name = "WebServlet", urlPatterns = {"/WebClient"})
 public class WebClient extends HttpServlet {
 
-    private service_class_data.TicketService service = new TicketServiceService().getTicketServicePort();
+//    private service_class_data.TicketService service = new TicketServiceService().getTicketServicePort();
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
 
         response.sendRedirect("OrderPage.jsp");
+
+//        Process process = new Process(request);
+
+//        process.treatment(out);
+
+
     }
 
     @Override
